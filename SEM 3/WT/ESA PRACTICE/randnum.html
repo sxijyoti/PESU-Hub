@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        .even { background-color: green; }
+        .odd { background-color: red; }
+    </style>
+</head>
+<body onload="init()">
+    <table id="table1" >
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </table>
+    <button id="btn1">Add</button>
+    <div id="display"></div>
+    <script>
+        function init() {
+            const button = document.getElementById('btn1');
+            const table = document.getElementById('table1');
+            const displayDiv = document.getElementById('display');
+
+            button.addEventListener('click', () => {
+                const row = table.insertRow();
+                for (let i = 0; i < 2; i++) {
+                    const cell = row.insertCell();
+                    const randomNum = Math.floor(Math.random() * 200) + 1;
+                    cell.textContent = randomNum;
+
+                    cell.addEventListener('mouseover', () => {
+                        cell.className = randomNum % 2 === 0 ? 'even' : 'odd';
+                    });
+
+                    cell.addEventListener('click', () => {
+                        displayDiv.textContent = `Cell Content: ${randomNum}`;
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

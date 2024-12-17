@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Fetcher</title>
+</head>
+<body>
+    <select id="input1">
+        <option value="faded.mp3">Faded by Alan Walker</option>
+        <option value="shapeofyou.mp3">Shape of You by Ed Sheeran</option>
+    </select>
+    <button id="fetchAudio">Fetch Audio</button>
+    <div id="audioDisplay"></div>
+    <script>
+        document.getElementById('fetchAudio').addEventListener('click', async () => {
+            const audioDiv = document.getElementById('audioDisplay');
+            const select = document.getElementById('input1');
+            const selectedUrl = select.value;
+
+            try {
+                const response = await fetch(selectedUrl);
+                if (response.ok) {
+                    const audioBlob = await response.blob();
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    audioDiv.innerHTML = `<audio controls src="${audioUrl}"></audio>`;
+                } else {
+                    audioDiv.textContent = 'Failed to fetch audio.';
+                }
+            } catch (error) {
+                audioDiv.textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

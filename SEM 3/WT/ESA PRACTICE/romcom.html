@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+</head>
+<body>
+<form>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address"><br><br>
+  <label for="number">Number:</label><br>
+  <input type="number" id="number" name="number" min="1000000000" max="9999999999" required><br><br>
+  <fieldset>
+    <legend>Romcom:</legend>
+    <input type="checkbox" id="TBBT" name="romcom" value="TBBT">
+    <label for="TBBT">TBBT</label><br>
+    <input type="checkbox" id="B99" name="romcom" value="B99">
+    <label for="B99">B99</label><br>
+    <input type="checkbox" id="TO" name="romcom" value="TO">
+    <label for="TO">TO</label><br>
+  </fieldset>
+  <fieldset>
+    <legend>Others:</legend>
+    <input type="checkbox" id="Money Heist" name="others" value="Money Heist">
+    <label for="Money Heist">Money Heist</label><br>
+    <input type="checkbox" id="Masterchef" name="others" value="Masterchef">
+    <label for="Masterchef">Masterchef</label><br>
+  </fieldset>
+  <fieldset>
+    <legend>Do you watch anime?</legend>
+    <input type="radio" id="yes" name="anime" value="Yes">
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="no" name="anime" value="No">
+    <label for="no">No</label><br>
+    <input type="radio" id="sometimes" name="anime" value="Sometimes">
+    <label for=" sometimes">Sometimes</label><br>
+  </fieldset>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- A web page has a form for online registration of a Tennis competition.
+The participant can be an adult or a child
+Participant must be able to choose if  has previously participated in the
+same event in one or more of the years 2019-20 /2018-19/2017-18
+The form should provide the controls to accept above mentioned details as well
+as the personal information like name and gender
+The user details must be sent to the server script "/registration" when the form
+is submitted
+The details (s)he enters must be visible in the address bar of her/his browser
+Write the HTML code for the form with suitable elements and default values -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Competition Registration</title>
+</head>
+<body>
+    <h1>Tennis Competition Registration Form</h1>
+    <form action="/registration" method="get">
+        <!-- Personal Information -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <!-- Age Category -->
+        <label>Participant Type:</label><br>
+        <input type="radio" id="adult" name="participant_type" value="adult" required>
+        <label for="adult">Adult</label><br>
+        <input type="radio" id="child" name="participant_type" value="child">
+        <label for="child">Child</label><br><br>
+
+        <!-- Previous Participation -->
+        <label>Previous Participation (check all that apply):</label><br>
+        <input type="checkbox" id="2019-20" name="previous_years" value="2019-20">
+        <label for="2019-20">2019-20</label><br>
+        <input type="checkbox" id="2018-19" name="previous_years" value="2018-19">
+        <label for="2018-19">2018-19</label><br>
+        <input type="checkbox" id="2017-18" name="previous_years" value="2017-18">
+        <label for="2017-18">2017-18</label><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
