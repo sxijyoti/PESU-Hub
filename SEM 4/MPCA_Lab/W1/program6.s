@@ -1,0 +1,9 @@
+.text
+MOV R0, #5
+MOV R1, #1
+MOV R2, R0
+Loop: SUB R0,R0,R1
+MUL R2,R2,R0
+CMP R0,R1
+BNE Loop
+.end
