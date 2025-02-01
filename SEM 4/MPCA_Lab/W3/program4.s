@@ -1,0 +1,11 @@
+.data
+A: .word 1,2,3,4,5,6,7,8,9
+
+.text
+LDR R0,=A
+MOV R1,#3
+MOV R2,#1
+MOV R3,#2
+MOV R6,#4
+MLA R4,R1,R2,R3
+MLA R0,R4,R6,R0
