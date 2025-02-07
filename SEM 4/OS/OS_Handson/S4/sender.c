@@ -1,8 +1,8 @@
-#include<sys/ipc.h> //interprocess communication
-#include<sys/shm.h>
-#include<stdio.h>
-#include<unistd.h>
-#include<string.h>
+#include <sys/ipc.h> //interprocess communication
+#include <sys/shm.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 
 int main(){
     void *shared_mem;
