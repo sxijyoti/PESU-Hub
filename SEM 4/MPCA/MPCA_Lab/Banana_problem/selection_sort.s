@@ -1,0 +1,29 @@
+.data
+A: .word 1,2,10,9,5,4,6,3
+N: .word 8
+
+.text
+LDR R0,=N
+LDR R2,=A
+MOV R8,#1
+loop:
+LDR R1,[R0]
+SUB R1,R1,R8
+MOV R9,R2
+LDR R3,[R2]
+MOV R7,R3
+MOV R5,R2
+innerloop:
+LDR R4,[R9,#4]!
+CMP R7,R4
+MOVPL R5,R9
+MOVPL R7,R4
+SUB R1,R1,#1
+CMP R1,#0
+BNE innerloop
+LDR R6,[R5]
+STR R3,[R5]
+STR R6,[R2],#4
+ADD R8,R8,#1
+CMP R8,#8
+BNE loop
